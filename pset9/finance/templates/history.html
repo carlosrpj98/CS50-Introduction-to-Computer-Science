@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Hystory
+{% endblock %}
+
+{% block main %}
+<style>
+    table, th, td {
+        border:2px solid black;
+        padding: 5px 50px 5px 50px;
+        padding-inline: ;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+    <table>
+        <tr style="font-weight: 700;">
+            <td>Symbol</td>
+            <td style="color: green;">Buy</td>
+            <td style="color: red;">Sell</td>
+            <td>Date and time</td>
+        </tr>
+        <tr>
+            {% for index in range(history|length) %}
+                <tr>
+                    {% for info in history[index] %}
+                        {% if history[index][info] == 0 %}
+                            <td style=" font-weight: bold;">-</td>
+                        {% else %}
+                            <td>{{history[index][info]}}</td>
+                        {% endif %}
+
+                {% endfor %}
+                </tr>
+            {% endfor %}
+        </tr>
+    </table>
+{% endblock %}

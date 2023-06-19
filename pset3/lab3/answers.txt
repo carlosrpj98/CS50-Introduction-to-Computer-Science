@@ -1,0 +1,11 @@
+sort1 uses: Bubble
+
+How do you know?: High time running reversed sort, and low time with sorted.
+
+sort2 uses: Merge
+
+How do you know?: Works fine with large arguments, with a low time, but the same amount of steps are needed even if the input is already sorted.
+
+sort3 uses: Selection
+
+How do you know?: Takes a lot of time to run arguments both already sorted, reversed or random, and the time increases with the size of the argument.

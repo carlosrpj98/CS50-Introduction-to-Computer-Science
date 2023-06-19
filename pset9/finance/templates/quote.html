@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="symbol" placeholder="Stock symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    {% for info in informations %}
+    <ul style="display: inline-block; margin-top: 20px; text-align= center; list-style-type: none; margin: 0; padding: 20px;">
+        <li>{{info}}: {{informations[info]}}</li>
+    </ul>
+    {% endfor %}
+{% endblock %}
